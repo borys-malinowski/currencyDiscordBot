@@ -5,8 +5,9 @@ import { config } from "dotenv";
 import getGoldRate from "./getGoldRate";
 import getGoldCompare from "./getGoldCompare";
 import Options from "./typeOptions";
-import getCurrencyRate from "./work";
+import getCurrencyRate from "./getCurrencyRate";
 import formatMessageContent, { PREFIX } from "./formatMessageContent";
+import getCmpRate from "./getCnpRate";
 
 config();
 const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
@@ -22,6 +23,9 @@ const getCommandMapper = async (message: Message<boolean>) => {
     },
     currencyRate: async () => {
       await getCurrencyRate(message);
+    },
+    cmpRate: async () => {
+      await getCmpRate(message);
     },
     _default: async () => {},
   };

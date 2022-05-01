@@ -8,15 +8,15 @@ export enum NBPRoutes {
 
 const callNBPApi = async <T>(endpoint: NBPRoutes) => {
   const response = await fetch(`${nbpURL}${endpoint}?format=json`);
-  //try {
-    if(response.ok) {
-      const data = await response.json() as T;
-      return data;
-    } else if(response.status === 404) {
-      return null;
-    }
-    return null; // do wywalenia
-  //} catch {}
+ //try {
+  if(response.ok) {
+    const data = await response.json() as T;
+    return data;
+  } else if(response.status === 404) {
+    return null;
+  }
+  return null; // do wywalenia
+//} catch {}
   
 };
 

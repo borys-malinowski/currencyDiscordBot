@@ -8,6 +8,7 @@ import Options from "./typeOptions";
 import getCurrencyRate from "./getCurrencyRate";
 import formatMessageContent, { PREFIX } from "./formatMessageContent";
 import getCmpRate from "./getCnpRate";
+import getCryptoRate from "./getCryptoRate";
 
 config();
 const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
@@ -26,6 +27,9 @@ const getCommandMapper = async (message: Message<boolean>) => {
     },
     cmpRate: async () => {
       await getCmpRate(message);
+    },
+    cryptoRate: async () => {
+      await getCryptoRate(message);
     },
     _default: async () => {},
   };

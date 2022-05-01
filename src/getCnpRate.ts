@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import callCMPApi, { MarketCapRoutes } from "./coinMarketCap";
+import callCMPApi, { MarketCapRoutes } from "./callCoinMarketCapApi";
 import CoinMarketCap from "./typeCoinMarketCap";
 
 const getCmpRate = async (message: Message<boolean>) => {

@@ -15,7 +15,7 @@ const callNBPApi = async <T>(endpoint: NBPRoutes) => {
   } else if(response.status === 404) {
     return null;
   }
-  return null; // do wywalenia
+  return null; 
 //} catch {}
   
 };

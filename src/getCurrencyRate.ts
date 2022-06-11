@@ -7,10 +7,6 @@ enum CodesToNamesMapper {
   USD = "dolar amerykański",
 }
 
-// 1. API zwraca 2 wartości i mamy w mapperze ogarnięte
-// 2. API zwraca 1 wartość
-// 3. API nie zwraca nic
-// 4. API zwraca 2 wartości i nie mamy w mapperze
 
 const getCurrencyRate = async (message: Message<boolean>) => {
   const [_, currency] = formatMessageContent(message.content);
@@ -27,7 +23,7 @@ const getCurrencyRate = async (message: Message<boolean>) => {
     ) as NBPRoutes,
   );
   const apiResponses = await Promise.all([tableAResponse, tableBResponse]);
-  const validResponses = new Set<CurrencyRate>([]); //set unikalne wartości
+  const validResponses = new Set<CurrencyRate>([]); 
   apiResponses.forEach((response) => {
     if (response) {
       validResponses.add(response);

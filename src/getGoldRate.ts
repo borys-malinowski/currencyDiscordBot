@@ -1,6 +1,6 @@
 import { Message } from 'discord.js';
 import callNBPApi, { NBPRoutes } from './callNBPApi'
-import GoldRate from './typeGoldRate';
+import GoldRate from './types/typeGoldRate';
 
 const getGoldRate = async (message: Message<boolean>) => {
     const response = await callNBPApi<GoldRate>(NBPRoutes.GoldRate);

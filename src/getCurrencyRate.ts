@@ -1,7 +1,7 @@
 import { Message } from "discord.js";
 import formatMessageContent from "./formatMessageContent";
 import callNBPApi, { NBPRoutes } from "./callNBPApi";
-import CurrencyRate from "./typeCurrencyRate";
+import CurrencyRate from "./types/typeCurrencyRate";
 
 enum CodesToNamesMapper {
   USD = "dolar amerykański",

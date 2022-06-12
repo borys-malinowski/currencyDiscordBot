@@ -4,7 +4,7 @@ import { Client, Message } from "discord.js";
 import { config } from "dotenv";
 import getGoldRate from "./getGoldRate";
 import getGoldCompare from "./getGoldCompare";
-import Options from "./typeOptions";
+import Options from "./types/typeOptions";
 import getCurrencyRate from "./getCurrencyRate";
 import formatMessageContent, { PREFIX } from "./formatMessageContent";
 import getCmpRate from "./getCnpRate";

@@ -1,6 +1,6 @@
 import { Message } from "discord.js";
 import callCMPApi, { MarketCapRoutes } from "./callCoinMarketCapApi";
-import CoinMarketCap from "./typeCoinMarketCap";
+import CoinMarketCap from "./types/typeCoinMarketCap";
 
 const getCmpRate = async (message: Message<boolean>) => {
   const response = await callCMPApi<CoinMarketCap>(MarketCapRoutes.Latest);

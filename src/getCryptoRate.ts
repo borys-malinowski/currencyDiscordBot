@@ -1,7 +1,7 @@
 import { Message } from "discord.js";
 import callCoinGeckoApi, { coinGeckoRoutes } from "./callCoinGeckoApi";
 import formatMessageContent from "./formatMessageContent";
-import CoinGecko from "./typeCoinGecko";
+import CoinGecko from "./types/typeCoinGecko";
 
 const getCryptoRate = async (message: Message<boolean>) => {
   const response = await callCoinGeckoApi<CoinGecko>(

@@ -1,6 +1,4 @@
-import "source-map-support/register";
-import "v8-compile-cache";
-import { Client, Message } from "discord.js";
+import { Client, Message, GatewayIntentBits, Partials } from "discord.js";
 import { config } from "dotenv";
 import getGoldRate from "./getGoldRate";
 import getGoldCompare from "./getGoldCompare";
@@ -11,7 +9,14 @@ import getCmpRate from "./getCnpRate";
 import getCryptoRate from "./getCryptoRate";
 
 config();
-const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ],
+  partials: [Partials.Channel, Partials.Message],
+});
 
 const getCommandMapper = async (message: Message<boolean>) => {
   const [cmdName] = formatMessageContent(message.content);
